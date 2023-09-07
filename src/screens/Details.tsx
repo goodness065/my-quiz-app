@@ -6,7 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { useQuiz } from "../provider/QuizProvider";
 import Button from "../components/Button";
 import ErrorMessage from "../components/ErrorMessage";
-import { categories } from "../utils/data/categories";
+import { categories } from "../utils/data/Categories";
 
 const Details = () => {
   const history = useNavigate();
