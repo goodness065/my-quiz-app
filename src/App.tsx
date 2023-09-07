@@ -1,14 +1,16 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import './App.css'
+import { AppLayout } from "./components/app-layout/AppLayout";
 
 function App() {
   return (
-    <>
-      <h1 className='text-red-500 text-9xl'>
-        Setting up
-      </h1>
-    </>
-  )
+    <Router>
+        <Routes>
+          <Route path="/" element={<AppLayout />}>
+          </Route>
+        </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
