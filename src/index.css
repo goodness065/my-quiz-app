@@ -16,43 +16,77 @@ body {
   padding: 0 80px;
 }
 
-.css-p0rm37{
+.css-p0rm37 {
   font-family: "Space Grotesk", sans-serif !important;
 }
 
-.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
-.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+/* .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+  background-color: white !important;
+} */
+
+.MuiFormControl-root {
+  background-color: white !important;
+}
+
+.MuiFormLabel-root,
+.MuiFormLabel-root.Mui-focused {
   color: #344054 !important;
   font-family: "Space Grotesk", sans-serif !important;
   font-size: 18px !important;
   font-weight: 500 !important;
 }
+/* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: #344054 !important;
+  font-family: "Space Grotesk", sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+} */
 
-.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root:hover
-  .MuiOutlinedInput-notchedOutline {
+.MuiInputBase-root:hover .MuiOutlinedInput-notchedOutline {
   border: 1px solid #d0d5dd !important;
 }
+/* .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root:hover
+  .MuiOutlinedInput-notchedOutline {
+  border: 1px solid #d0d5dd !important;
+} */
 
-.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+.MuiInputBase-root {
   border: 1px solid #d0d5dd !important;
 }
+/* .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  border: 1px solid #d0d5dd !important;
+} */
 
-.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
-  .MuiOutlinedInput-notchedOutline {
+.MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border: 1px solid #d0d5dd !important;
   border-width: 1px !important;
 }
+/* .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border: 1px solid #d0d5dd !important;
+  border-width: 1px !important;
+} */
 
-.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+.MuiInputBase-root {
   font-family: "Space Grotesk", sans-serif !important;
   border-radius: 8px !important;
   font-size: 16px !important;
   height: 50px !important;
 }
+/* .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  font-family: "Space Grotesk", sans-serif !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  height: 50px !important;
+} */
 
-.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+.MuiInputBase-input {
   height: 10px !important;
 }
+/* .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  height: 10px !important;
+} */
 
 .error {
   transition: opacity 0.3s ease-in-out;
@@ -69,24 +103,24 @@ body {
 }
 
 .green-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #53B03A;
+  background-color: #53b03a;
   z-index: -2;
 }
 
 .green-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
   height: 100%;
-  background-color:#0D801F;
+  background-color: #0d801f;
   transition: all 0.3s;
   z-index: -1;
 }
@@ -109,7 +143,7 @@ body {
 }
 
 .red-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -120,13 +154,13 @@ body {
 }
 
 .red-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
   height: 100%;
-  background-color:#cc0022;
+  background-color: #cc0022;
   transition: all 0.3s;
   z-index: -1;
 }
@@ -147,11 +181,11 @@ body {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  border: 1px solid #B7BECB;
+  border: 1px solid #b7becb;
 }
 
 .white-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -162,13 +196,13 @@ body {
 }
 
 .white-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
   height: 100%;
-  background-color:#f0f0f0;
+  background-color: #f0f0f0;
   transition: all 0.3s;
   border-radius: 0.5rem;
   z-index: -1;
@@ -191,10 +225,10 @@ body {
   padding: 15px 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  border: 1px solid #B7BECB;
+  border: 1px solid #b7becb;
 }
 
-.singleOptionhover:hover{
+.singleOptionhover:hover {
   border: 1px solid white !important;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -214,8 +248,6 @@ body {
   background-color: rgb(233, 0, 0);
   color: white;
 }
-
-
 
 @media (max-width: 992px) {
   .layout_container {

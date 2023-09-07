@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import { TextField } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
@@ -23,7 +24,7 @@ const Details = () => {
       setError(true);
       setTimeout(() => {
         setError(false);
-      }, 2000);
+      }, 3000);
       return;
     } else {
       setError(false);
@@ -33,7 +34,12 @@ const Details = () => {
 
   return (
     <main className="min-h-[100vh] bg-[#F9F9F9] layout_container w-full flex justify-center items-center">
-      <div className="w-full mt-14 md:w-[75%] lg:w-[50%] p-5 flex flex-col items-center font-light bg-white sm:p-8 rounded-lg">
+      <motion.div
+        initial={{ y: 25, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 2 }}
+        className="w-full mt-14 md:w-[75%] lg:w-[50%] p-5 flex flex-col items-center font-light bg-white sm:p-8 rounded-lg"
+      >
         <span className="text-3xl text-[#101828] font-bold">
           Fill in your details
         </span>
@@ -131,7 +137,7 @@ const Details = () => {
             title="Start Quiz"
           />
         </div>
-      </div>
+      </motion.div>
     </main>
   );
 };
