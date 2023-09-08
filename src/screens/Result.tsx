@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import resultImage from "../assets/image/result-image.svg";
 import { useQuiz } from "../provider/QuizProvider";
 import { getScoreMessage } from "../utils/scoreMessage";
 import Button from "../components/Button";
 import { motion } from "framer-motion";
+import { ResultImage } from "../components/svgs/images/result.image";
 
 const Result = () => {
   const history = useNavigate();
@@ -29,7 +29,7 @@ const Result = () => {
         initial={{ y: 25, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 2 }} className="w-full mt-14 md:w-[75%] lg:w-[50%] p-5 flex flex-col items-center font-light bg-white sm:p-8 rounded-lg">
-          <img src={resultImage} alt="" />
+          <ResultImage />
           <h1 className="text-[#1F1F1F] text-4xl font-bold my-5">
             {score} / {quizSetting.no_of_questions}
           </h1>

@@ -16,13 +16,18 @@ body {
   padding: 0 80px;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* material-ui */
+
 .css-p0rm37 {
   font-family: "Space Grotesk", sans-serif !important;
 }
-
-/* .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
-  background-color: white !important;
-} */
 
 .MuiFormControl-root {
   background-color: white !important;
@@ -35,38 +40,19 @@ body {
   font-size: 18px !important;
   font-weight: 500 !important;
 }
-/* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root,
-.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-  color: #344054 !important;
-  font-family: "Space Grotesk", sans-serif !important;
-  font-size: 18px !important;
-  font-weight: 500 !important;
-} */
 
 .MuiInputBase-root:hover .MuiOutlinedInput-notchedOutline {
   border: 1px solid #d0d5dd !important;
 }
-/* .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root:hover
-  .MuiOutlinedInput-notchedOutline {
-  border: 1px solid #d0d5dd !important;
-} */
 
 .MuiInputBase-root {
-  border: 1px solid #d0d5dd !important;
+  /* border: 1px solid #d0d5dd !important; */
 }
-/* .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
-  border: 1px solid #d0d5dd !important;
-} */
 
 .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border: 1px solid #d0d5dd !important;
   border-width: 1px !important;
 }
-/* .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
-  .MuiOutlinedInput-notchedOutline {
-  border: 1px solid #d0d5dd !important;
-  border-width: 1px !important;
-} */
 
 .MuiInputBase-root {
   font-family: "Space Grotesk", sans-serif !important;
@@ -74,19 +60,10 @@ body {
   font-size: 16px !important;
   height: 50px !important;
 }
-/* .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
-  font-family: "Space Grotesk", sans-serif !important;
-  border-radius: 8px !important;
-  font-size: 16px !important;
-  height: 50px !important;
-} */
 
 .MuiInputBase-input {
   height: 10px !important;
 }
-/* .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
-  height: 10px !important;
-} */
 
 .error {
   transition: opacity 0.3s ease-in-out;

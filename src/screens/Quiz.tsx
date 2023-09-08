@@ -4,12 +4,12 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { motion } from "framer-motion";
 
 import { useQuiz } from "../provider/QuizProvider";
-import arrowLeft from "../assets/icon/arrow-left.svg";
-import reload from "../assets/icon/reload.svg";
 import Button from "../components/Button";
 import { IResult, useGetQuiz } from "../hook/useGetQuiz";
 import Question from "../components/Question";
 import QuitModal from "../components/Modat";
+import { ArrowRight } from "../components/svgs/icons/arrow-left.icon";
+import { Refresh } from "../components/svgs/icons/refresh.icon";
 
 const Quiz = () => {
   const history = useNavigate();
@@ -48,7 +48,7 @@ const Quiz = () => {
       history("/details");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentQues, data, data?.results]);
+  }, [currentQues, data]);
 
   const handleShuffle = (options: string[]) => {
     return options.sort(() => Math.random() - 0.5);
@@ -79,7 +79,7 @@ const Quiz = () => {
               <div className="flex justify-start items-start">
                 <Button
                   onClick={handleOpen}
-                  icon={arrowLeft}
+                  icon={<ArrowRight />}
                   variant="white"
                   className="w-10 h-10 !p-0"
                 />
@@ -95,7 +95,7 @@ const Quiz = () => {
               <div>
                 <Button
                   title="Restart"
-                  icon={reload}
+                  icon={<Refresh />}
                   variant="white"
                   onClick={handleRestart}
                 />

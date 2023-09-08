@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 interface ButtonProps {
@@ -6,7 +7,7 @@ interface ButtonProps {
   className?: string;
   [x: string]: unknown;
   isLoading?: boolean;
-  icon?: string;
+  icon?: ReactNode;
   variant?: "green" | "white" | "red";
 }
 
@@ -26,7 +27,7 @@ const Button = ({
       } ${className}`}
       style={{ boxShadow: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)" }}
     >
-      {icon ? <img src={icon} alt="" className={`${title && "mr-2"}`} /> : null}
+      {icon ? <span className={`${title && "mr-2"}`}>{icon}</span> : null}
       {title}
     </Link>
   ) : (
@@ -38,7 +39,7 @@ const Button = ({
         style={{ boxShadow: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)" }}
         {...props}
       >
-        {icon ? <img src={icon} alt="" className={`${title && "mr-2"}`} /> : null}
+        {icon ? <span className={`${title && "mr-2"}`}>{icon}</span> : null}
         {title}
       </button>
     </>
