@@ -59,6 +59,7 @@ export const QuizProvider = ({ children }: QuizProviderProps) => {
         no_of_questions: "",
         name: "",
       });
+      setScore(0)
       setSelectedAnswer("");
       history("/details");
     };

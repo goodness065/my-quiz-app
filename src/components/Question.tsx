@@ -2,7 +2,7 @@ import { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 import { useQuiz } from "../provider/QuizProvider";
 import { useNavigate } from "react-router-dom";
-import QuitModal from "./Modat";
+import QuitModal from "./Modal";
 import { IResult } from "../hook/useGetQuiz";
 import Button from "./Button";
 
@@ -23,7 +23,7 @@ const Question = ({
   correct,
 }: IQuestions) => {
   const history = useNavigate();
-  const { score, setScore, setSelectedAnswer, selectedAnswer } = useQuiz();
+  const { score, setScore, setSelectedAnswer, selectedAnswer, handleQuit } = useQuiz();
   const [error, setError] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [openQuitModal, setOpenQuitModal] = useState<boolean>(false);
@@ -110,7 +110,7 @@ const Question = ({
         </div>
       </div>
 
-      <QuitModal title="Are you sure you want to quit?" open={openQuitModal} handleClose={handleClose} />
+      <QuitModal title="Are you sure you want to quit?" open={openQuitModal} handleClose={handleClose} handleOnclick={handleQuit} />
     </div>
   );
 };

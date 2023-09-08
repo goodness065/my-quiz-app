@@ -1,8 +1,6 @@
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "./Button";
-import { useQuiz } from "../provider/QuizProvider";
-import { useNavigate } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -18,18 +16,11 @@ const style = {
 interface IModal {
   open: boolean;
   handleClose: () => void;
+  handleOnclick: () => void;
   title: string;
-  type?: "back" | "quit";
 }
 
-const QuitModal = ({ open, handleClose, title, type = "quit" }: IModal) => {
-  const history = useNavigate();
-  const { handleQuit ,setSelectedAnswer } = useQuiz();
-
-  const handleBack = () => {
-    setSelectedAnswer("");
-    history("/details");
-  };
+const QuizModal = ({ open, handleClose, title, handleOnclick }: IModal) => {
 
   return (
     <div className="custom__modal__container">
@@ -38,12 +29,12 @@ const QuitModal = ({ open, handleClose, title, type = "quit" }: IModal) => {
             <h1 className="text-[#1F1F1F] text-xl font-bold text-center">
               {title}
             </h1>
-            <div className="flex w-full justify-around mt-10">
+            <div className="flex w-full justify-around mt-5">
               <Button variant="green" title="No" onClick={handleClose} />
               <Button
                 title="Yes"
                 variant="red"
-                onClick={type === "quit" ? handleQuit : handleBack}
+                onClick={handleOnclick}
               />
             </div>
           </Box>
@@ -52,4 +43,4 @@ const QuitModal = ({ open, handleClose, title, type = "quit" }: IModal) => {
   );
 };
 
-export default QuitModal;
+export default QuizModal;

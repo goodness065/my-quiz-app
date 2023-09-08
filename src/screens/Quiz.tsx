@@ -7,7 +7,7 @@ import { useQuiz } from "../provider/QuizProvider";
 import Button from "../components/Button";
 import { IResult, useGetQuiz } from "../hook/useGetQuiz";
 import Question from "../components/Question";
-import QuitModal from "../components/Modat";
+import QuitModal from "../components/Modal";
 import { ArrowRight } from "../components/svgs/icons/arrow-left.icon";
 import { Refresh } from "../components/svgs/icons/refresh.icon";
 
@@ -17,7 +17,8 @@ const Quiz = () => {
   const { quizSetting, setSelectedAnswer, setScore } = useQuiz();
   const [options, setOptions] = useState<string[] | undefined>();
   const [currentQues, setCurrentQues] = useState<number>(0);
-  const [openQuitModal, setOpenQuitModal] = useState<boolean>(false);
+  const [openBackModal, setOpenBackModal] = useState<boolean>(false);
+  const [openRefreshModal, setOpenRefreshModal] = useState<boolean>(false);
 
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
@@ -54,14 +55,22 @@ const Quiz = () => {
     return options.sort(() => Math.random() - 0.5);
   };
 
+  const handleBack = () => {
+    setSelectedAnswer("");
+    history("/details");
+  };
+
   const handleRestart = () => {
     setCurrentQues(0);
     setScore(0);
     setSelectedAnswer("");
+    setOpenRefreshModal(false)
   };
 
-  const handleOpen = () => setOpenQuitModal(true);
-  const handleClose = () => setOpenQuitModal(!openQuitModal);
+  const handleOpen = () => setOpenBackModal(true);
+  const handleClose = () => setOpenBackModal(!openBackModal);
+  const handleRefreshOpen = () => setOpenRefreshModal(true);
+  const handleRefreshClose = () => setOpenRefreshModal(!openRefreshModal);
 
   return (
     <div className="min-h-[100vh] bg-[#F9F9F9] layout_container w-full flex flex-col justify-center items-center">
@@ -97,7 +106,7 @@ const Quiz = () => {
                   title="Restart"
                   icon={<Refresh />}
                   variant="white"
-                  onClick={handleRestart}
+                  onClick={handleRefreshOpen}
                 />
               </div>
             </div>
@@ -120,10 +129,17 @@ const Quiz = () => {
         </motion.div>
       )}
       <QuitModal
-        title="Are you sure you want to go back?"
-        type="back"
-        open={openQuitModal}
+        title="Are you sure you want a refresh??"
+        open={openRefreshModal}
+        handleClose={handleRefreshClose}
+        handleOnclick={handleRestart}
+      />
+
+      <QuitModal
+        title="Are you sure you want to go back to form page?"
+        open={openBackModal}
         handleClose={handleClose}
+        handleOnclick={handleBack}
       />
     </div>
   );
