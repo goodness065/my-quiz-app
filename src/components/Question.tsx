@@ -61,7 +61,7 @@ const Question = ({
   };
 
   const handleNext = () => {
-    if (currentQues > questions.length - 2) {
+    if ((currentQues > questions.length - 2) && selectedAnswer.length !== 0 ) {
       setSelectedAnswer("");
       history("/result");
     } else if (selectedAnswer) {
