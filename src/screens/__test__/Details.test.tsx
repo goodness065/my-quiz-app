@@ -40,7 +40,7 @@ describe("Details Component", () => {
     fireEvent.click(startButton);
 
     // Check if the error message is displayed
-    const errorMessage = screen.getByText("Please Fill all the fields");
+    const errorMessage = screen.getByText("All fields are required");
     expect(errorMessage).toBeInTheDocument();
   });
 
