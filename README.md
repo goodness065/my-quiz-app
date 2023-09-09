@@ -7,7 +7,13 @@ This is a Quiz App built using React, Vite, TypeScript, and the open Trivia data
 - [Demo](#demo)
 - [Features](#features)
 - [Technologies](#technologies)
-- [Installation](#installation)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+  - [Home Page](#home-page)
+  - [Details Page](#details-page)
+  - [Quiz Page](#quiz-page)
 - [HTTP Requests with Axios](#http-requests-with-axios)
 
 ## Demo
@@ -31,17 +37,75 @@ This is a Quiz App built using React, Vite, TypeScript, and the open Trivia data
 - [Axios](https://axios-http.com/)
 - [Trivia API](https://opentdb.com/)
 
-## Installation
+## Getting Started
 
-   ```bash
-   git clone https://github.com/goodness065/my-quiz-app.git
+### Prerequisites
 
-   cd my-quiz-app
+Before you begin, ensure you have met the following requirements:
 
-   yarn install
-   
-   yarn run dev
-   ```
+- Node.js and npm (or Yarn) installed on your system.
+
+### Installation
+
+```bash
+git clone https://github.com/goodness065/my-quiz-app.git
+
+cd my-quiz-app
+
+# if you are using npm
+npm install 
+
+# if you are using yarn
+yarn install
+
+# if you are using npm
+npm run dev
+
+# if you are using yarn
+yarn dev
+```
+
+## Usage
+
+### Home Page
+
+1. To run the app and access the home page, follow these steps:
+
+```bash
+# Start the development server
+# if you are using npm
+npm run dev
+
+# if you are using yarn
+yarn dev
+```
+
+2. Open your browser and visit http://127.0.0.1:5173/.
+
+3. Click on the "Start Quiz" button on the home page to proceed to the details page.
+
+### Details Page
+
+1. After clicking on the "Start Quiz" button on the home page, you will be directed to the details page.
+
+2. On the details page, you'll need to fill in the necessary details for the quiz:
+
+   - **Name**: Enter your name.
+   - **Category**: Choose a category for the quiz.
+   - **Number of Questions**: Specify the number of questions you want in the quiz.
+   - **Difficulty Level**: Select the desired difficulty level.
+
+3. Once you've filled in these details, click on the "Start Quiz" button to initiate the quiz.
+
+### Quiz Page
+
+1. After clicking "Start Quiz" on the details page, you'll be taken to the quiz page.
+
+2. Answer the quiz questions to the best of your ability.
+
+3. After completing all the quiz questions, you'll have the option to submit your answers.
+
+4. Once you've submitted your answers, you can view your quiz results, including your score and any feedback or summary provided by the app.
 
 ## HTTP Requests with Axios
 
