@@ -45,6 +45,15 @@ input:-webkit-autofill:active {
   border: 1px solid #d0d5dd !important;
 }
 
+.hero {
+  background: linear-gradient(
+      89.72deg,
+      rgba(0, 0, 0, 0.7) 0.26%,
+      rgba(0, 0, 0, 0) 99.78%
+    ),
+    url(https://ik.imagekit.io/vflhgcjrm/bg-image.webp) no-repeat center/cover;
+}
+
 .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border: 1px solid #d0d5dd !important;
   border-width: 1px !important;

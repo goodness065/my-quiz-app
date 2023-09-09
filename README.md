@@ -24,7 +24,7 @@ This is a Quiz App built using React, Vite, TypeScript, and the open Trivia data
 
 ## Features
 
-- **Dynamic Quiz Questions:** Retrieve quiz questions from the open Trivia database according to the user's specified category and the number of questions they want, then present these questions to the user for their interaction.
+- **Dynamic Quiz Questions:** Retrieve quiz questions from the open Trivia database according to the user's specified category, difficulty and the number of questions they want, then present these questions to the user for their interaction.
 - **Scoring:** Keep track of the user's score as they answer questions.
 - **End of Quiz Summary:** Display the user's final score and a summary of their quiz performance.
 - **Responsive Design:** Ensure the app looks great on various screen sizes.

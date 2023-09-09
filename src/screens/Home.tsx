@@ -4,12 +4,7 @@ import { motion } from "framer-motion";
 const Home = () => {
   return (
     <main
-      className="h-[100vh] layout_container w-full flex flex-col justify-center items-start"
-      style={{
-        backgroundImage:
-          "url(https://res.cloudinary.com/dcp6fbxa9/image/upload/v1694283468/bg-image_mbaidm.webp)",
-        backgroundSize: "100%",
-      }}
+      className="h-[100vh] hero layout_container w-full flex flex-col justify-center items-start"
     >
       <motion.div
         initial={{ y: 25, opacity: 0 }}
