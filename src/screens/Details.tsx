@@ -55,7 +55,7 @@ const Details = () => {
           Welcome, Please enter your details.
         </span>
         <div className="flex flex-col pt-5 justify-evenly w-full">
-          {error && <ErrorMessage>Please Fill all the fields</ErrorMessage>}
+          {error && <ErrorMessage>All fields are required</ErrorMessage>}
           <TextField
             label="Enter your name"
             variant="outlined"

@@ -14,6 +14,7 @@ import { ResultImage } from "../components/svgs/images/result.image";
  * @returns The rendered result page with the score, quiz name, and message.
  *          Buttons to retake the quiz and go back.
  */
+
 const Result = () => {
   const history = useNavigate();
   const { handleQuit, score, quizSetting, setSelectedAnswer, setScore } =

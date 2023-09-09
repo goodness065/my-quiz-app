@@ -1,12 +1,11 @@
 import Button from "../components/Button";
-import quizBackground from "../assets/image/bg-image.svg";
 import { motion } from "framer-motion";
 
 const Home = () => {
   return (
     <main
       className="h-[100vh] layout_container w-full flex flex-col justify-center items-start"
-      style={{ backgroundImage: `url(${quizBackground})` }}
+      style={{ backgroundImage: "url(https://res.cloudinary.com/dcp6fbxa9/image/upload/v1694271642/bg-image_rfvvud.svg)" }}
     >
       <motion.div
         initial={{ y: 25, opacity: 0 }}
