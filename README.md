@@ -35,6 +35,7 @@ This is a Quiz App built using React, Vite, TypeScript, and the open Trivia data
 - [Vite](https://vitejs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Axios](https://axios-http.com/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Trivia API](https://opentdb.com/)
 
 ## Getting Started
@@ -43,7 +44,7 @@ This is a Quiz App built using React, Vite, TypeScript, and the open Trivia data
 
 Before you begin, ensure you have met the following requirements:
 
-- Node.js and npm (or Yarn) installed on your system.
+- Node.js and yarn installed on your system.
 
 ### Installation
 
@@ -52,17 +53,10 @@ git clone https://github.com/goodness065/my-quiz-app.git
 
 cd my-quiz-app
 
-# if you are using npm
-npm install 
-
-# if you are using yarn
 yarn install
 
-# if you are using npm
-npm run dev
-
-# if you are using yarn
-yarn dev
+# to run test
+yarn test
 ```
 
 ## Usage
@@ -73,11 +67,9 @@ yarn dev
 
 ```bash
 # Start the development server
-# if you are using npm
-npm run dev
 
-# if you are using yarn
 yarn dev
+
 ```
 
 2. Open your browser and visit http://127.0.0.1:5173/.
