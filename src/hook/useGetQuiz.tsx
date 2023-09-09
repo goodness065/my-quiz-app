@@ -20,14 +20,14 @@ export interface IQuizData {
  */
 
 export const useGetQuiz = (): [
-  { data: IQuizData | undefined; loading: boolean; error: boolean },
+  { data: IQuizData | undefined; loading: boolean; error: Error | undefined },
   () => Promise<void>
 ] => {
   const { quizSetting } = useQuiz();
 
   const [data, setData] = useState<IQuizData>();
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
+  const [error, setError] = useState<Error>();
 
   const fetch = useCallback(async () => {
     setLoading(true);
@@ -38,7 +38,7 @@ export const useGetQuiz = (): [
       );
       setData(quiz.data);
     } catch (err) {
-      setError(true);
+      setError(err as Error);
     }
     setLoading(false);
   }, [
