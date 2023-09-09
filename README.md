@@ -12,7 +12,7 @@ This is a Quiz App built using React, Vite, TypeScript, and the open Trivia data
 
 ## Demo
 
-[Link to Demo](https://goody-quiz.vercel.app/) *(Add a link to your live demo if available)*
+[Link to Demo](https://goody-quiz.vercel.app/)
 
 ![Demo Screenshot](src/assets/image/demo.PNG)
 
