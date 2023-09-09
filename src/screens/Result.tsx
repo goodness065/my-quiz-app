@@ -6,11 +6,22 @@ import Button from "../components/Button";
 import { motion } from "framer-motion";
 import { ResultImage } from "../components/svgs/images/result.image";
 
+/**
+ * Renders the result page of a quiz.
+ * Retrieves necessary data and functions from the `QuizProvider` context to render the result page.
+ * Handles navigation and resetting the quiz.
+ *
+ * @returns The rendered result page with the score, quiz name, and message.
+ *          Buttons to retake the quiz and go back.
+ */
 const Result = () => {
   const history = useNavigate();
   const { handleQuit, score, quizSetting, setSelectedAnswer, setScore } =
     useQuiz();
 
+  /**
+   * Resets the quiz score and selected answer, and navigates to the quiz page.
+   */
   const retakeQuiz = () => {
     setScore(0);
     setSelectedAnswer("");

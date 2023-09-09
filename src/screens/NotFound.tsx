@@ -1,6 +1,12 @@
 import Button from "../components/Button";
 import { motion } from "framer-motion";
 
+/**
+ * Renders a 404 error page with a message and a button to navigate back to the home page.
+ * 
+ * @returns {JSX.Element} The JSX element representing the 404 error page.
+ */
+
 const NotFound = () => {
   return (
     <main className="h-[100vh] bg-[#F9F9F9] layout_container w-full flex justify-center items-center">

@@ -11,6 +11,12 @@ import QuitModal from "../components/Modal";
 import { ArrowRight } from "../components/svgs/icons/arrow-left.icon";
 import { Refresh } from "../components/svgs/icons/refresh.icon";
 
+/**
+ * The `Quiz` function is a React component that represents a quiz page. It fetches quiz data from an API using the `useGetQuiz` hook and displays the questions and options to the user. It also handles user interactions such as selecting an answer, navigating to the next question, and restarting the quiz.
+ *
+ * @returns JSX elements representing the quiz page.
+ */
+
 const Quiz = () => {
   const history = useNavigate();
   const [{ data, loading }] = useGetQuiz();
@@ -21,6 +27,7 @@ const Quiz = () => {
   const [openRefreshModal, setOpenRefreshModal] = useState<boolean>(false);
 
   useEffect(() => {
+    // Handle beforeunload event
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
       e.preventDefault();
       e.returnValue = "Are you sure you want to leave this page?";
@@ -36,6 +43,7 @@ const Quiz = () => {
   }, []);
 
   useEffect(() => {
+    // Set options for the current question
     if (data && data?.results.length !== 0) {
       setOptions(
         handleShuffle([
@@ -56,15 +64,17 @@ const Quiz = () => {
   };
 
   const handleBack = () => {
+    // Reset selected answer and navigate to details page
     setSelectedAnswer("");
     history("/details");
   };
 
   const handleRestart = () => {
+    // Reset current question, score, and selected answer
     setCurrentQues(0);
     setScore(0);
     setSelectedAnswer("");
-    setOpenRefreshModal(false)
+    setOpenRefreshModal(false);
   };
 
   const handleOpen = () => setOpenBackModal(true);

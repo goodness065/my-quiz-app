@@ -40,6 +40,12 @@ export const QuizContext = createContext<QuizProviderValues>({
   handleQuit() {},
 });
 
+/**
+* A custom hook that provides access to the quiz context and its related functions.
+* Returns: The quiz context and its related functions.
+* Example: const { quizSetting, setQuizSetting, score, setScore, selectedAnswer, setSelectedAnswer, handleQuit } = useQuiz();
+ */
+
 export const useQuiz = () => {
   return useContext(QuizContext);
 };

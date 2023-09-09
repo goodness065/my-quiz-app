@@ -9,6 +9,14 @@ import Button from "../components/Button";
 import ErrorMessage from "../components/ErrorMessage";
 import { categories } from "../utils/data/Categories";
 
+/**
+ * Renders a form for users to fill in their details before starting a quiz.
+ * Uses state and context hooks to manage the form data and navigate to the quiz page.
+ * Displays an error message if any of the required fields are not filled in.
+ * 
+ * @returns JSX code that renders the form for users to fill in their details
+ */
+
 const Details = () => {
   const history = useNavigate();
   const { quizSetting, setQuizSetting } = useQuiz();

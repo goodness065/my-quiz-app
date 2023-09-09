@@ -10,8 +10,13 @@ export interface IResult {
 }
 
 export interface IQuizData {
-    results: IResult[];
+  results: IResult[];
 }
+
+/**
+ * Fetches quiz data from an API based on the user's quiz settings.
+ * @returns An array containing the quiz data, loading state, error state, and the fetch function.
+ */
 
 export const useGetQuiz = (): [
   { data: IQuizData | undefined; loading: boolean; error: Error | undefined },

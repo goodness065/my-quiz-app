@@ -15,6 +15,16 @@ interface IQuestions {
   correct: string;
 }
 
+/**
+ * Renders a quiz question and handles user interactions such as selecting an answer, checking the answer, and navigating to the next question or submitting the quiz.
+ * @param {number} currentQues - The index of the current question in the quiz.
+ * @param {function} setCurrentQues - A function to update the value of `currentQues`.
+ * @param {Array} questions - An array of objects representing the quiz questions.
+ * @param {Array} options - An array of strings representing the answer options for the current question.
+ * @param {string} correct - A string representing the correct answer for the current question.
+ * @returns {JSX.Element} The JSX code for the quiz question and user interaction components.
+ */
+
 const Question = ({
   currentQues,
   setCurrentQues,
