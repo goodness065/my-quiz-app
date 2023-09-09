@@ -1,27 +1,50 @@
-# React + TypeScript + Vite
+# Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Quiz App built using React, Vite, TypeScript, and the open Trivia database to fetch questions. Test your knowledge and have fun!
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Demo](#demo)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [HTTP Requests with Axios](#http-requests-with-axios)
 
-## Expanding the ESLint configuration
+## Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+[Link to Demo](https://goody-quiz.vercel.app/) *(Add a link to your live demo if available)*
 
-- Configure the top-level `parserOptions` property like this:
+![Demo Screenshot](src/assets/image/demo.PNG)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Features
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **Dynamic Quiz Questions:** Fetch trivia questions from the Trivia API and display them to users.
+- **Scoring:** Keep track of the user's score as they answer questions.
+- **End of Quiz Summary:** Display the user's final score and a summary of their quiz performance.
+- **Responsive Design:** Ensure the app looks great on various screen sizes.
+
+## Technologies
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Axios](https://axios-http.com/)
+- [Trivia API](https://opentdb.com/)
+
+## Installation
+
+   ```bash
+   git clone https://github.com/goodness065/my-quiz-app.git
+
+   cd my-quiz-app
+
+   yarn install
+   
+   yarn run dev
+   ```
+
+## HTTP Requests with Axios
+
+This project uses Axios for making HTTP requests to the Trivia Database. Axios is a popular JavaScript library for making asynchronous HTTP requests in the browser and Node.js.
+
+To see how Axios is used in this project, you can check the code in [src/hook/useGetQuiz.tsx](src/hook/useGetQuiz.tsx).
