@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { Outlet } from "react-router-dom";
 
 import Header from "../Header";
-// import Transitions from "../Transition";
+import { Toaster } from "react-hot-toast";
 
 export interface AppLayoutProps {
   children?: ReactNode;
@@ -10,14 +10,13 @@ export interface AppLayoutProps {
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    // <Transitions>
       <div>
         <Header />
         <div className="app-content">
           {children ?? null}
           <Outlet />
+          <Toaster />
         </div>
       </div>
-    // </Transitions>
   );
 };

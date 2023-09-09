@@ -6,7 +6,6 @@ import QuitModal from "./Modal";
 import { IResult } from "../hook/useGetQuiz";
 import Button from "./Button";
 
-
 interface IQuestions {
   currentQues: number;
   setCurrentQues(data: number): void;
@@ -33,7 +32,8 @@ const Question = ({
   correct,
 }: IQuestions) => {
   const history = useNavigate();
-  const { score, setScore, setSelectedAnswer, selectedAnswer, handleQuit } = useQuiz();
+  const { score, setScore, setSelectedAnswer, selectedAnswer, handleQuit } =
+    useQuiz();
   const [error, setError] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [openQuitModal, setOpenQuitModal] = useState<boolean>(false);
@@ -86,12 +86,14 @@ const Question = ({
           <h1 className="text-[#1F1F1F] text-xl font-bold">
             {currentQues + 1}.
           </h1>
-          <span
-            dangerouslySetInnerHTML={{
-              __html: questions[currentQues].question,
-            }}
-            className="text-[#1F1F1F] text-xl font-bold ml-[10px]"
-          />
+          {questions && (
+            <span
+              dangerouslySetInnerHTML={{
+                __html: questions[currentQues]?.question,
+              }}
+              className="text-[#1F1F1F] text-xl font-bold ml-[10px]"
+            />
+          )}
         </div>
         <div className="options">
           {error && <ErrorMessage>{errorMessage}</ErrorMessage>}
@@ -116,11 +118,19 @@ const Question = ({
 
         <div className="flex w-full justify-around mt-2">
           <Button variant="red" title="Quit" onClick={handleOpen} />
-          <Button title={currentQues > questions.length - 2 ? "Submit" : "Next"} onClick={handleNext} />
+          <Button
+            title={currentQues > questions?.length - 2 ? "Submit" : "Next"}
+            onClick={handleNext}
+          />
         </div>
       </div>
 
-      <QuitModal title="Are you sure you want to quit?" open={openQuitModal} handleClose={handleClose} handleOnclick={handleQuit} />
+      <QuitModal
+        title="Are you sure you want to quit?"
+        open={openQuitModal}
+        handleClose={handleClose}
+        handleOnclick={handleQuit}
+      />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import { motion } from "framer-motion";
+import { toast } from "react-hot-toast";
 
 import { useQuiz } from "../provider/QuizProvider";
 import Button from "../components/Button";
@@ -19,7 +20,7 @@ import { Refresh } from "../components/svgs/icons/refresh.icon";
 
 const Quiz = () => {
   const history = useNavigate();
-  const [{ data, loading }] = useGetQuiz();
+  const [{ data, loading, error }] = useGetQuiz();
   const { quizSetting, setSelectedAnswer, setScore } = useQuiz();
   const [options, setOptions] = useState<string[] | undefined>();
   const [currentQues, setCurrentQues] = useState<number>(0);
@@ -41,6 +42,12 @@ const Quiz = () => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (error) {
+      toast.error("an error occured");
+    }
+  }, [error]);
 
   useEffect(() => {
     // Set options for the current question

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { useQuiz } from "../provider/QuizProvider";
@@ -19,14 +20,14 @@ export interface IQuizData {
  */
 
 export const useGetQuiz = (): [
-  { data: IQuizData | undefined; loading: boolean; error: Error | undefined },
+  { data: IQuizData | undefined; loading: boolean; error: any },
   () => Promise<void>
 ] => {
   const { quizSetting } = useQuiz();
 
   const [data, setData] = useState<IQuizData>();
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<Error>();
+  const [error, setError] = useState<any>();
 
   const fetch = useCallback(async () => {
     setLoading(true);
@@ -37,7 +38,7 @@ export const useGetQuiz = (): [
       );
       setData(quiz.data);
     } catch (err) {
-      setError(err as Error);
+      setError(err);
     }
     setLoading(false);
   }, [
