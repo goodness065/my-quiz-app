@@ -139,7 +139,7 @@ const Quiz = () => {
         </motion.div>
       )}
       <QuitModal
-        title="Are you sure you want a refresh?"
+        title="Are you sure you want a restart?"
         open={openRefreshModal}
         handleClose={handleRefreshClose}
         handleOnclick={handleRestart}
