@@ -45,10 +45,6 @@ input:-webkit-autofill:active {
   border: 1px solid #d0d5dd !important;
 }
 
-.MuiInputBase-root {
-  /* border: 1px solid #d0d5dd !important; */
-}
-
 .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border: 1px solid #d0d5dd !important;
   border-width: 1px !important;
